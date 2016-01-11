@@ -46,9 +46,8 @@
  alert( frozenTrie.lookup( "kwijibo" ) ); // outputs false
 
 */
-package main
+package Bits
 
-import "fmt"
 
 // Configure the bit writing and reading functions to work natively in BASE-64
 // encoding. That way, we don't have to convert back and forth to bytes.
@@ -100,17 +99,3 @@ func ORD(ch string) int {
 var L1 = 32*32
 var L2 = 32
 
-
-func main() {
-	fmt.Println("W:", W)
-	fmt.Println("len(BASE64):", len(BASE64))
-	fmt.Println("len(BASE64_CACHE):", len(BASE64_CACHE))
-	fmt.Println("CHR(0):", CHR(0))
-	fmt.Println("ORD(\"A\"):", ORD("A"))
-	fmt.Println("CHR(1):", CHR(1))
-	fmt.Println("ORD(\"B\"):", ORD("B"))
-	fmt.Println("CHR(63):", CHR(63))
-	fmt.Println("ORD(\"_\"):", ORD("_"))
-	fmt.Println("L1:", L1)
-	fmt.Println("L2:", L2)
-}

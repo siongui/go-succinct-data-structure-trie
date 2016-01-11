@@ -6,8 +6,9 @@ export GOPATH=$(realpath .)
 export PATH := $(GOROOT)/bin:$(GOPATH)/bin:$(PATH)
 
 
-default:
-	@go run Bits.go
+test:
+	@# -v means verbose, can see logs of t.Log
+	@go test -v
 
 help:
 	@go help
