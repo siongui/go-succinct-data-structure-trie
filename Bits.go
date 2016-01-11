@@ -117,6 +117,8 @@ type BitWriter struct {
     fewer.
 */
 func (bw *BitWriter) Write(data, numBits uint) {
+	//for i := (numBits-1); i >= 0; i-- {
+	//FIXME: the above commented line will cause infinite loop, why???
 	for i := numBits; i > 0; i-- {
 		j := i-1
 		if (data & ( 1 << j )) != 0 {
