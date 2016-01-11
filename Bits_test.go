@@ -33,3 +33,19 @@ func TestBASE64(t *testing.T) {
 	t.Log("L1:", L1)
 	t.Log("L2:", L2)
 }
+
+func TestBitWriter(t *testing.T) {
+	bw := BitWriter{}
+	bw.Write(3, 2)
+	if bw.GetDebugString(3) != "11" {
+		t.Error("Expected 11, got ", bw.GetDebugString(3))
+	}
+	bw.Write(0, 3)
+	bw.Write(2, 2)
+	if bw.GetDebugString(8) != "1100010" {
+		t.Error("Expected 1100010, got ", bw.GetDebugString(8))
+	}
+	t.Log(bw)
+	t.Log(bw.GetData())
+	t.Log(bw.GetDebugString(3))
+}
