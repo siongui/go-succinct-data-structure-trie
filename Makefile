@@ -10,5 +10,8 @@ test:
 	@# -v means verbose, can see logs of t.Log
 	@go test -v
 
+bitsjs:
+	chromium-browser reference/test.html
+
 help:
 	@go help

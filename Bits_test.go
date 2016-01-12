@@ -40,12 +40,21 @@ func TestBitWriter(t *testing.T) {
 	if bw.GetDebugString(3) != "11" {
 		t.Error("Expected 11, got ", bw.GetDebugString(3))
 	}
+	if bw.GetData() != "w" {
+		t.Error("Expected w, got ", bw.GetData())
+	}
 	bw.Write(0, 3)
+	if bw.GetData() != "w" {
+		t.Error("Expected w, got ", bw.GetData())
+	}
 	bw.Write(2, 2)
-	if bw.GetDebugString(8) != "1100010" {
-		t.Error("Expected 1100010, got ", bw.GetDebugString(8))
+	if bw.GetData() != "xA" {
+		t.Error("Expected xA, got ", bw.GetData())
 	}
 	t.Log(bw)
 	t.Log(bw.GetData())
 	t.Log(bw.GetDebugString(3))
+	if bw.GetDebugString(3) != "110 001 0" {
+		t.Error("Expected 110 001 0, got ", bw.GetDebugString(3))
+	}
 }
