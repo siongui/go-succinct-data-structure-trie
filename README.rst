@@ -22,6 +22,8 @@ References
 
 .. [3] Google Search `succinct trie <https://www.google.com/search?q=succinct+trie>`__
 
+.. [4] Google Search `golang const array <https://www.google.com/search?q=golang+const+array>`__
+
 
 .. _Go: https://golang.org/
 .. _UNLICENSE: http://unlicense.org/
