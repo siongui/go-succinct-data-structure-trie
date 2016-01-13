@@ -3,7 +3,7 @@ Succinct Data Structure Trie
 ============================
 
 Implementation of Succinct Trie [1]_ in Go_.
-(Not yet started)
+(Not yet finished)
 
 
 UNLICENSE_
@@ -23,6 +23,12 @@ References
 .. [3] Google Search `succinct trie <https://www.google.com/search?q=succinct+trie>`__
 
 .. [4] Google Search `golang const array <https://www.google.com/search?q=golang+const+array>`__
+
+.. [5] Google Search `golang function as argument <https://www.google.com/search?q=golang+function+as+argument>`__
+
+.. [6] Google Search `golang charcodeat <https://www.google.com/search?q=golang+charcodeat>`__
+
+       `string - Go lang's equivalent of charCode() method of JavaScript - Stack Overflow <http://stackoverflow.com/questions/31239330/go-langs-equivalent-of-charcode-method-of-javascript>`_
 
 
 .. _Go: https://golang.org/

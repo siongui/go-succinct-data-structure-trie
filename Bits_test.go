@@ -133,3 +133,29 @@ func TestRankDirectory(t *testing.T) {
 		t.Error("Expected 178, got ", rd.Rank(0, 77))
 	}
 }
+
+func TestTrie(t *testing.T) {
+	te := Trie{}
+	te.Init()
+	te.Insert("apple")
+	te.Insert("orange")
+	te.Insert("alphapha")
+	te.Insert("lamp")
+	te.Insert("hello")
+	te.Insert("jello")
+	te.Insert("quiz")
+	teData := te.Encode()
+	t.Log(teData)
+	t.Log(te.GetNodeCount())
+	if teData != "v6qqqqqqqpRQp-AcAWOSgeiWAIIoeAeYWWQWaPeWXzIMBddIePA" {
+		t.Error("Expected v6qqqqqqqpRQp-AcAWOSgeiWAIIoeAeYWWQWaPeWXzIMBddIePA, got ", teData)
+	}
+	if te.GetNodeCount() != 38 {
+		t.Error("Expected 38, got ", te.GetNodeCount())
+	}
+	rd := CreateRankDirectory(teData, te.GetNodeCount() * 2 + 1, L1, L2)
+	if rd.GetData() != "BMIg" {
+		t.Error("Expected BMIg, got ", rd.GetData())
+	}
+	t.Log(rd.GetData())
+}

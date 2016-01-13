@@ -39,4 +39,20 @@ function TestRankDirectory() {
   console.log(rd.select(0, 77))
 }
 
-TestRankDirectory();
+function TestTrie() {
+  var te = new Trie();
+  te.insert("apple");
+  te.insert("orange");
+  te.insert("alphapha");
+  te.insert("lamp");
+  te.insert("hello");
+  te.insert("jello");
+  te.insert("quiz");
+  var teData = te.encode();
+  console.log(teData);
+  console.log(te.getNodeCount());
+  var rd = RankDirectory.Create(teData, te.getNodeCount() * 2 + 1, L1, L2);
+  console.log(rd.getData());
+}
+
+TestTrie();
