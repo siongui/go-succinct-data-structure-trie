@@ -78,6 +78,7 @@ func TestBitString(t *testing.T) {
 	if bs.Rank(65) != 38 {
 		t.Error("Expected 38, got ", bs.Rank(65))
 	}
+	// FIXME??: bs.Rank(66) fails the test
 	if bs.Get(5,7) != 60 {
 		t.Error("Expected 60, got ", bs.Get(5,7))
 	}
@@ -107,5 +108,28 @@ func TestBitString(t *testing.T) {
 	}
 	if bs.Count(5,7) != 4 {
 		t.Error("Expected 4, got ", bs.Count(5,7))
+	}
+}
+
+func TestRankDirectory(t *testing.T) {
+	rd := CreateRankDirectory("1wnc2bxhbx7mkbgnpwq7vtlub7p6pkls42lvie9j1ekcpt0zytrdl67enescolwex7aumq4imywstrpktbvxy0rp61nnonj9grdf", 400, L1, L2)
+	t.Log(rd)
+	if rd.directory.GetData() != "BIJA0EcXBsH4kykLgzjc" {
+		t.Error("Expected BIJA0EcXBsH4kykLgzjc, got ", rd.directory.GetData())
+	}
+	if rd.directory.length != 120 {
+		t.Error("Expected 120, got ", rd.directory.length)
+	}
+	if rd.Rank(1, 200) != 113 {
+		t.Error("Expected 113, got ", rd.Rank(1, 200))
+	}
+	if rd.Rank(0, 100) != 47 {
+		t.Error("Expected 47, got ", rd.Rank(0, 100))
+	}
+	if rd.Select(1, 134) != 233 {
+		t.Error("Expected 233, got ", rd.Rank(1, 134))
+	}
+	if rd.Select(0, 77) != 178 {
+		t.Error("Expected 178, got ", rd.Rank(0, 77))
 	}
 }

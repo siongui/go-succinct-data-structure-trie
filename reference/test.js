@@ -30,4 +30,13 @@ function TestBitString() {
   console.log(bs.count(5,7));
 }
 
-TestBitString()
+function TestRankDirectory() {
+  var rd = RankDirectory.Create("1wnc2bxhbx7mkbgnpwq7vtlub7p6pkls42lvie9j1ekcpt0zytrdl67enescolwex7aumq4imywstrpktbvxy0rp61nnonj9grdf", 400, L1, L2);
+  console.log(rd);
+  console.log(rd.rank(1, 200))
+  console.log(rd.rank(0, 100))
+  console.log(rd.select(1, 134))
+  console.log(rd.select(0, 77))
+}
+
+TestRankDirectory();
