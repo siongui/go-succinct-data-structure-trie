@@ -53,6 +53,9 @@ function TestTrie() {
   console.log(te.getNodeCount());
   var rd = RankDirectory.Create(teData, te.getNodeCount() * 2 + 1, L1, L2);
   console.log(rd.getData());
+
+  var ftrie = new FrozenTrie( teData, rd.getData(), te.getNodeCount());
+  console.log(ftrie.lookup("alphapha"))
 }
 
 TestTrie();

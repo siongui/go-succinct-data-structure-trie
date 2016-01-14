@@ -159,3 +159,65 @@ func TestTrie(t *testing.T) {
 	}
 	t.Log(rd.GetData())
 }
+
+func TestLookup(t *testing.T) {
+	te := Trie{}
+	te.Init()
+	// insert words in the following order,
+	// lookup of alphapha return false
+	/*
+		te.Insert("apple")
+		te.Insert("orange")
+		te.Insert("alphapha")
+		te.Insert("lamp")
+		te.Insert("hello")
+		te.Insert("jello")
+		te.Insert("quiz")
+	*/
+	te.Insert("alphapha")
+	te.Insert("apple")
+	te.Insert("hello")
+	te.Insert("jello")
+	te.Insert("lamp")
+	te.Insert("orange")
+	te.Insert("quiz")
+	teData := te.Encode()
+	rd := CreateRankDirectory(teData, te.GetNodeCount()*2+1, L1, L2)
+
+	ft := FrozenTrie{}
+	ft.Init(teData, rd.GetData(), te.GetNodeCount())
+
+	if ft.Lookup("apple") != true {
+		t.Error("apple")
+	}
+	if ft.Lookup("appl") != false {
+		t.Error("appl")
+	}
+	if ft.Lookup("applea") != false {
+		t.Error("applea")
+	}
+	if ft.Lookup("orange") != true {
+		t.Error("orange")
+	}
+	if ft.Lookup("lamp") != true {
+		t.Error("lamp")
+	}
+	if ft.Lookup("hello") != true {
+		t.Error("hello")
+	}
+	if ft.Lookup("jello") != true {
+		t.Error("jello")
+	}
+	if ft.Lookup("quiz") != true {
+		t.Error("quiz")
+	}
+	if ft.Lookup("quize") != false {
+		t.Error("quize")
+	}
+	if ft.Lookup("alphaph") != false {
+		t.Error("alphaph")
+	}
+	if ft.Lookup("alphapha") != true {
+		t.Error("alphapha")
+	}
+}
