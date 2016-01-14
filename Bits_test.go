@@ -79,35 +79,35 @@ func TestBitString(t *testing.T) {
 		t.Error("Expected 38, got ", bs.Rank(65))
 	}
 	// FIXME??: bs.Rank(66) fails the test
-	if bs.Get(5,7) != 60 {
-		t.Error("Expected 60, got ", bs.Get(5,7))
+	if bs.Get(5, 7) != 60 {
+		t.Error("Expected 60, got ", bs.Get(5, 7))
 	}
-	if bs.Get(7,13) != 7314 {
-		t.Error("Expected 7314, got ", bs.Get(7,13))
+	if bs.Get(7, 13) != 7314 {
+		t.Error("Expected 7314, got ", bs.Get(7, 13))
 	}
-	if bs.Get(0,5) != 30 {
-		t.Error("Expected 30, got ", bs.Get(0,5))
+	if bs.Get(0, 5) != 30 {
+		t.Error("Expected 30, got ", bs.Get(0, 5))
 	}
-	if bs.Get(3,3) != 4 {
-		t.Error("Expected 4, got ", bs.Get(3,3))
+	if bs.Get(3, 3) != 4 {
+		t.Error("Expected 4, got ", bs.Get(3, 3))
 	}
-	if bs.Get(33,17) != 16362 {
-		t.Error("Expected 16362, got ", bs.Get(33,17))
+	if bs.Get(33, 17) != 16362 {
+		t.Error("Expected 16362, got ", bs.Get(33, 17))
 	}
-	if bs.Count(0,17) != 10 {
-		t.Error("Expected 10, got ", bs.Count(0,17))
+	if bs.Count(0, 17) != 10 {
+		t.Error("Expected 10, got ", bs.Count(0, 17))
 	}
-	if bs.Count(7,2) != 2 {
-		t.Error("Expected 2, got ", bs.Count(7,2))
+	if bs.Count(7, 2) != 2 {
+		t.Error("Expected 2, got ", bs.Count(7, 2))
 	}
-	if bs.Count(56,9) != 4 {
-		t.Error("Expected 4, got ", bs.Count(56,9))
+	if bs.Count(56, 9) != 4 {
+		t.Error("Expected 4, got ", bs.Count(56, 9))
 	}
-	if bs.Count(12,1) != 1 {
-		t.Error("Expected 1, got ", bs.Count(12,1))
+	if bs.Count(12, 1) != 1 {
+		t.Error("Expected 1, got ", bs.Count(12, 1))
 	}
-	if bs.Count(5,7) != 4 {
-		t.Error("Expected 4, got ", bs.Count(5,7))
+	if bs.Count(5, 7) != 4 {
+		t.Error("Expected 4, got ", bs.Count(5, 7))
 	}
 }
 
@@ -153,7 +153,7 @@ func TestTrie(t *testing.T) {
 	if te.GetNodeCount() != 38 {
 		t.Error("Expected 38, got ", te.GetNodeCount())
 	}
-	rd := CreateRankDirectory(teData, te.GetNodeCount() * 2 + 1, L1, L2)
+	rd := CreateRankDirectory(teData, te.GetNodeCount()*2+1, L1, L2)
 	if rd.GetData() != "BMIg" {
 		t.Error("Expected BMIg, got ", rd.GetData())
 	}

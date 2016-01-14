@@ -13,5 +13,9 @@ test:
 bitsjs:
 	chromium-browser reference/test.html
 
+fmt:
+	go fmt Bits.go
+	go fmt Bits_test.go
+
 help:
 	@go help
