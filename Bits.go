@@ -472,9 +472,24 @@ func (t *Trie) Insert(word string) {
 		commonPrefix += 1
 	}
 
+	t.cache = t.cache[:commonPrefix+1]
 	node := t.cache[commonPrefix]
 
 	for i := commonPrefix; i < len(word); i++ {
+		// fix the bug if words not inserted in alphabetical order
+		isLetterExist := false
+		for _, cld := range node.children {
+			if cld.letter == word[i:i+1] {
+				t.cache = append(t.cache, cld)
+				node = cld
+				isLetterExist = true
+				break
+			}
+		}
+		if isLetterExist {
+			continue
+		}
+
 		next := &TrieNode{
 			letter: word[i : i+1],
 			final:  false,

@@ -5,15 +5,8 @@ Succinct Data Structure Trie
 Implementation of Succinct Trie [1]_ in Go_.
 Basic porting finished.
 
-Bug
-===
-
-If words are not inserted in alphabetical order, there will be one more node
-in trie, and lookup of one of the inserted words will fail. See testing for
-example.
-
-UNLICENSE_
-==========
+UNLICENSE
+=========
 
 Released in public domain. See UNLICENSE_.
 
