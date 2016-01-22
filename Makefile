@@ -14,8 +14,9 @@ bitsjs:
 	chromium-browser reference/test.html
 
 fmt:
-	go fmt Bits.go
-	go fmt Bits_test.go
+	@#go fmt Bits.go
+	@#go fmt Bits_test.go
+	go fmt base64.go bitwriter.go bitstring.go rankdirectory.go trie.go frozentrie.go
 
 help:
 	@go help
