@@ -6,6 +6,9 @@ export GOPATH=$(realpath .)
 export PATH := $(GOROOT)/bin:$(GOPATH)/bin:$(PATH)
 
 
+run:
+	@go run example/usage.go
+
 test:
 	@# -v means verbose, can see logs of t.Log
 	@go test -v
@@ -20,3 +23,6 @@ fmt:
 
 help:
 	@go help
+
+install:
+	go get -u github.com/siongui/go-succinct-data-structure-trie

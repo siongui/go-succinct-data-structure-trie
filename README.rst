@@ -5,6 +5,11 @@ Succinct Data Structure Trie
 Implementation of Succinct Trie [1]_ in Go_.
 Basic porting finished.
 
+Usage
+=====
+
+See `example <example/usage.go>`__.
+
 UNLICENSE
 =========
 
