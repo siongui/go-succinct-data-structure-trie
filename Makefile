@@ -6,12 +6,12 @@ export GOPATH=$(realpath .)
 export PATH := $(GOROOT)/bin:$(GOPATH)/bin:$(PATH)
 
 
-run:
-	@go run example/usage.go
-
 test:
 	@# -v means verbose, can see logs of t.Log
 	@go test -v
+
+run:
+	@go run example/usage.go
 
 bitsjs:
 	chromium-browser reference/test.html
@@ -19,7 +19,7 @@ bitsjs:
 fmt:
 	@#go fmt Bits.go
 	@#go fmt Bits_test.go
-	go fmt base64.go bitwriter.go bitstring.go rankdirectory.go trie.go frozentrie.go
+	go fmt *.go
 
 help:
 	@go help

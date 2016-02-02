@@ -59,9 +59,9 @@ func (f *FrozenTrie) Init(data, directoryData string, nodeCount uint) {
   This is a private function that you don't have to use.
 */
 func (f *FrozenTrie) GetNodeByIndex(index uint) FrozenTrieNode {
-	// retrieve the 6-bit letter.
-	final := (f.data.Get(f.letterStart+index*6, 1) == 1)
-	letter := string("a"[0] + byte(f.data.Get(f.letterStart+index*6+1, 5)))
+	// retrieve the (dataBits)-bit letter.
+	final := (f.data.Get(f.letterStart+index*dataBits, 1) == 1)
+	letter := mapUintToChar[f.data.Get(f.letterStart+index*dataBits+1, (dataBits-1))]
 	firstChild := f.directory.Select(0, index+1) - index
 
 	// Since the nodes are in level order, this nodes children must go up

@@ -117,16 +117,16 @@ func (t *Trie) Encode() string {
 		bits.Write(0, 1)
 	})
 
-	// Write the data for each node, using 6 bits for node. 1 bit stores
-	// the "final" indicator. The other 5 bits store one of the 26 letters
-	// of the alphabet.
+	// Write the data for each node, using (dataBits) bits for one node.
+	// 1 bit stores the "final" indicator. The other (dataBits-1) bits store
+	// one of the characters of the alphabet.
 	t.Apply(func(node *TrieNode) {
-		value := node.letter[0] - "a"[0]
+		value := mapCharToUint[node.letter]
 		if node.final {
-			value |= 0x20
+			value |= (1 << (dataBits - 1))
 		}
 
-		bits.Write(uint(value), 6)
+		bits.Write(uint(value), dataBits)
 	})
 
 	return bits.GetData()
