@@ -29,11 +29,9 @@ func TestTrie(t *testing.T) {
 	teData := te.Encode()
 	t.Log(teData)
 	t.Log(te.GetNodeCount())
-	/*
-		if teData != "v2qqqqqqqpIUn4A5JZyBZ4ggCKh55ZZgBA5ZZd5vIEl1wx8g8A" {
-			t.Error("Expected v2qqqqqqqpIUn4A5JZyBZ4ggCKh55ZZgBA5ZZd5vIEl1wx8g8A, got ", teData)
-		}
-	*/
+	if teData != "v2qqqqqqqpIUjQA5JZyBZ4ggCKh55ZZgBA5ZZd5vIEl1wx8g8A" {
+		t.Error("Expected v2qqqqqqqpIUjQA5JZyBZ4ggCKh55ZZgBA5ZZd5vIEl1wx8g8A, got ", teData)
+	}
 	if te.GetNodeCount() != 37 {
 		t.Error("Expected 37, got ", te.GetNodeCount())
 	}

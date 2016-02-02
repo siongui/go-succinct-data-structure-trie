@@ -1,5 +1,10 @@
 package bits
 
+import "unicode/utf8"
+
+// https://blog.golang.org/strings
+// https://golang.org/pkg/unicode/utf8/
+
 /**
   A Trie node, for use in building the encoding trie. This is not needed for
   the decoder.
@@ -40,28 +45,33 @@ func (t *Trie) GetNodeCount() uint {
 */
 func (t *Trie) Insert(word string) {
 
-	commonPrefix := 0
+	commonPrefixWidth := 0
+	commonRuneCount := 0
 
-	min := len(word)
-	if min > len(t.previousWord) {
-		min = len(t.previousWord)
+	minRuneCount := utf8.RuneCountInString(word)
+	if minRuneCount > utf8.RuneCountInString(t.previousWord) {
+		minRuneCount = utf8.RuneCountInString(t.previousWord)
 	}
 
-	for i := 0; i < min; i++ {
-		if word[i] != t.previousWord[i] {
+	for ; commonRuneCount < minRuneCount; commonRuneCount++ {
+		runeValue1, width1 := utf8.DecodeRuneInString(word[commonPrefixWidth:])
+		runeValue2, _ := utf8.DecodeRuneInString(t.previousWord[commonPrefixWidth:])
+		if runeValue1 != runeValue2 {
 			break
 		}
-		commonPrefix += 1
+		commonPrefixWidth += width1
 	}
 
-	t.cache = t.cache[:commonPrefix+1]
-	node := t.cache[commonPrefix]
+	t.cache = t.cache[:commonRuneCount+1]
+	node := t.cache[commonRuneCount]
 
-	for i := commonPrefix; i < len(word); i++ {
+	for i, w := commonPrefixWidth, 0; i < len(word); i += w {
 		// fix the bug if words not inserted in alphabetical order
 		isLetterExist := false
+		runeValue, width := utf8.DecodeRuneInString(word[i:])
+		w = width
 		for _, cld := range node.children {
-			if cld.letter == word[i:i+1] {
+			if cld.letter == string(runeValue) {
 				t.cache = append(t.cache, cld)
 				node = cld
 				isLetterExist = true
@@ -73,7 +83,7 @@ func (t *Trie) Insert(word string) {
 		}
 
 		next := &TrieNode{
-			letter: word[i : i+1],
+			letter: string(runeValue),
 			final:  false,
 		}
 		t.nodeCount++

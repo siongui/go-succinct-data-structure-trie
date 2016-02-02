@@ -1,5 +1,7 @@
 package bits
 
+import "unicode/utf8"
+
 /**
   This class is used for traversing the succinctly encoded trie.
 */
@@ -95,12 +97,14 @@ func (f *FrozenTrie) GetRoot() FrozenTrieNode {
 */
 func (f *FrozenTrie) Lookup(word string) bool {
 	node := f.GetRoot()
-	for i := 0; i < len(word); i++ {
+	for i, w := 0, 0; i < len(word); i += w {
+		runeValue, width := utf8.DecodeRuneInString(word[i:])
+		w = width
 		var child FrozenTrieNode
 		var j uint = 0
 		for ; j < node.GetChildCount(); j++ {
 			child = node.GetChild(j)
-			if child.letter == word[i:i+1] {
+			if child.letter == string(runeValue) {
 				break
 			}
 		}

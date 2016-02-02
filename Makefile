@@ -17,9 +17,8 @@ bitsjs:
 	chromium-browser reference/test.html
 
 fmt:
-	@#go fmt Bits.go
-	@#go fmt Bits_test.go
-	go fmt *.go
+	@go fmt *.go
+	@go fmt example/*.go
 
 help:
 	@go help
