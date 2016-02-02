@@ -1,0 +1,23 @@
+diff --git a/reference/Bits.js b/reference/Bits.js
+index d5a3934..129bcd2 100644
+--- a/reference/Bits.js
++++ b/reference/Bits.js
+@@ -453,6 +453,18 @@ Trie.prototype = {
+         var node = this.cache[ this.cache.length - 1 ];
+ 
+         for( i = commonPrefix; i < word.length; i++ ) {
++            // fix the bug if words not inserted in alphabetical order
++            var isLetterExist = false;
++            for ( var j = 0; j < node.children.length; j++ ) {
++                if (node.children[j].letter == word[i]) {
++                    this.cache.push(node.children[j]);
++                    node = node.children[j];
++                    isLetterExist = true;
++                    break;
++                }
++            }
++            if (isLetterExist) { continue; }
++
+             var next = new TrieNode( word[i] );
+             this.nodeCount++;
+             node.children.push( next );
