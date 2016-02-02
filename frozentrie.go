@@ -61,7 +61,10 @@ func (f *FrozenTrie) Init(data, directoryData string, nodeCount uint) {
 func (f *FrozenTrie) GetNodeByIndex(index uint) FrozenTrieNode {
 	// retrieve the (dataBits)-bit letter.
 	final := (f.data.Get(f.letterStart+index*dataBits, 1) == 1)
-	letter := mapUintToChar[f.data.Get(f.letterStart+index*dataBits+1, (dataBits-1))]
+	letter, ok := mapUintToChar[f.data.Get(f.letterStart+index*dataBits+1, (dataBits-1))]
+	if !ok {
+		panic("illegal: bits -> char failed")
+	}
 	firstChild := f.directory.Select(0, index+1) - index
 
 	// Since the nodes are in level order, this nodes children must go up

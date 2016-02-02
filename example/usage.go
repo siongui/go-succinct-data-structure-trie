@@ -17,8 +17,8 @@ func insertNotInAlphabeticalOrder(te *bits.Trie) {
 func main() {
 	// optional: set alphabet of words
 	//bits.SetAllowedCharacters("abcdeghijklmnoprstuvyāīūṁṃŋṇṅñṭḍḷ…'’° -")
-	// default alphabet is [a-z], i.e.,
-	// bits.SetAllowedCharacters("abcdefghijklmnopqrstuvwxyz")
+	// default alphabet is [a-z ], i.e.,
+	// bits.SetAllowedCharacters("abcdefghijklmnopqrstuvwxyz ")
 
 	// encode: build succinct trie
 	te := bits.Trie{}

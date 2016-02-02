@@ -7,7 +7,7 @@ package bits
 import "strings"
 
 //var allowedCharacters = "abcdeghijklmnoprstuvyāīūṁṃŋṇṅñṭḍḷ…'’° -"
-var allowedCharacters = "abcdefghijklmnopqrstuvwxyz"
+var allowedCharacters = "abcdefghijklmnopqrstuvwxyz "
 var mapCharToUint = getCharToUintMap(allowedCharacters)
 var mapUintToChar = getUintToCharMap(mapCharToUint)
 

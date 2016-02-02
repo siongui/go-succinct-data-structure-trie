@@ -121,7 +121,10 @@ func (t *Trie) Encode() string {
 	// 1 bit stores the "final" indicator. The other (dataBits-1) bits store
 	// one of the characters of the alphabet.
 	t.Apply(func(node *TrieNode) {
-		value := mapCharToUint[node.letter]
+		value, ok := mapCharToUint[node.letter]
+		if !ok {
+			panic("illegal character:" + node.letter)
+		}
 		if node.final {
 			value |= (1 << (dataBits - 1))
 		}
