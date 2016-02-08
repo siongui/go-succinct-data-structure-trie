@@ -17,6 +17,8 @@ func insertNotInAlphabeticalOrder(te *bits.Trie) {
 func main() {
 	// optional: set alphabet of words
 	//bits.SetAllowedCharacters("abcdeghijklmnoprstuvyāīūṁṃŋṇṅñṭḍḷ…'’° -")
+	// Note that you must include space " " in your alphabet if you do not use the
+	// default alphabet.
 	// default alphabet is [a-z ], i.e.,
 	// bits.SetAllowedCharacters("abcdefghijklmnopqrstuvwxyz ")
 
@@ -41,4 +43,10 @@ func main() {
 	println(ft.Lookup("apple"))
 	println(ft.Lookup("appl"))
 	println(ft.Lookup("applee"))
+
+	// decode: words suggestion (find words that start with "prefix")
+	// find words starts with "a", max number of returned words is 10
+	for _, word := range ft.GetSuggestedWords("a", 10) {
+		println(word)
+	}
 }

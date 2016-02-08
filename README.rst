@@ -3,7 +3,6 @@ Succinct Data Structure Trie
 ============================
 
 Implementation of Succinct Trie [1]_ in Go_.
-Basic porting finished.
 
 Usage
 =====
@@ -34,6 +33,9 @@ References
 
        `string - Go lang's equivalent of charCode() method of JavaScript - Stack Overflow <http://stackoverflow.com/questions/31239330/go-langs-equivalent-of-charcode-method-of-javascript>`_
 
+.. [7] `[Golang] Succinct Trie Implementation <https://siongui.github.io/2016/02/08/go-succinct-trie-implementation/>`_
+
+.. [8] `[JavaScript] Bug in Succinct Trie Implementation of Bits.js <https://siongui.github.io/2016/02/02/javascript-bug-in-succinct-trie-implementation-of-bits-js/>`_
 
 .. _Go: https://golang.org/
 .. _UNLICENSE: http://unlicense.org/
