@@ -1,8 +1,26 @@
-============================
-Succinct Data Structure Trie
-============================
+================================
+`Succinct Data Structure`_ Trie_
+================================
 
-Implementation of Succinct Trie [1]_ in Go_.
+.. image:: https://img.shields.io/badge/Language-Go-blue.svg
+   :target: https://golang.org/
+
+.. image:: https://godoc.org/github.com/siongui/go-succinct-data-structure-trie?status.png
+   :target: https://godoc.org/github.com/siongui/go-succinct-data-structure-trie
+
+.. image:: https://api.travis-ci.org/siongui/go-succinct-data-structure-trie.png?branch=master
+   :target: https://travis-ci.org/siongui/go-succinct-data-structure-trie
+
+.. image:: https://goreportcard.com/badge/github.com/siongui/go-succinct-data-structure-trie
+   :target: https://goreportcard.com/report/github.com/siongui/go-succinct-data-structure-trie
+
+.. image:: https://img.shields.io/badge/license-Unlicense-blue.svg
+   :target: https://raw.githubusercontent.com/siongui/go-succinct-data-structure-trie/master/UNLICENSE
+
+.. image:: https://img.shields.io/twitter/url/https/github.com/siongui/go-succinct-data-structure-trie.svg?style=social
+   :target: https://twitter.com/intent/tweet?text=Wow:&url=%5Bobject%20Object%5D
+
+Implementation of `Succinct Trie`_ [1]_ in Go_.
 
 Usage
 =====
@@ -39,3 +57,6 @@ References
 
 .. _Go: https://golang.org/
 .. _UNLICENSE: http://unlicense.org/
+.. _Succinct Data Structure: https://www.google.com/search?q=Succinct+Data+Structure
+.. _Trie: https://www.google.com/search?q=Trie
+.. _Succinct Trie: https://www.google.com/search?q=Succinct+Trie

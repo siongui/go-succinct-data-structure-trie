@@ -1,3 +1,5 @@
+// Package go-succinct-data-structure-trie implements trie with succinct data
+// structure in Go.
 package bits
 
 import "unicode/utf8"
