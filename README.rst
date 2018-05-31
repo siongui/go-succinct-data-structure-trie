@@ -20,7 +20,14 @@
 .. image:: https://img.shields.io/twitter/url/https/github.com/siongui/go-succinct-data-structure-trie.svg?style=social
    :target: https://twitter.com/intent/tweet?text=Wow:&url=%5Bobject%20Object%5D
 
+
 Implementation of `Succinct Trie`_ [1]_ in Go_.
+
+The trie structure is great for fast lookup of dictionary words, but if the
+vocabulary of the dictionary is big, it may takes a lot of space to store the
+constructed trie. For this reason, succinct data structure is applied to the
+trie strcuture and we can both have fast lookup and small space requirement.
+
 
 Usage
 =====
