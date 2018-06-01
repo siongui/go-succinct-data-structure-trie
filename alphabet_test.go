@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-func TestAll(t *testing.T) {
+func TestAlphabet(t *testing.T) {
 	if len(mapCharToUint) != 27 {
 		t.Error("len(mapCharToUint) != 27")
 		t.Log(mapCharToUint)

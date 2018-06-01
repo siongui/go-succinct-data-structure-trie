@@ -1,6 +1,9 @@
 package bits
 
-import "testing"
+import (
+	"testing"
+	"reflect"
+)
 
 func TestSearch(t *testing.T) {
 	te := Trie{}
@@ -12,7 +15,13 @@ func TestSearch(t *testing.T) {
 	ft := FrozenTrie{}
 	ft.Init(teData, rd.GetData(), te.GetNodeCount())
 
-	t.Log(ft.GetSuggestedWords("a", 10))
-	t.Log(ft.GetSuggestedWords("b", 10))
-	t.Log(ft.GetSuggestedWords("h", 10))
+	if !reflect.DeepEqual(ft.GetSuggestedWords("a", 10), []string{"apple", "alphapha"}) {
+		t.Error(`ft.GetSuggestedWords("a", 10) != []string{"apple", "alphapha"}`)
+	}
+	if len(ft.GetSuggestedWords("b", 10)) != 0 {
+		t.Error(`len(ft.GetSuggestedWords("b", 10)) != 0`)
+	}
+	if !reflect.DeepEqual(ft.GetSuggestedWords("h", 10), []string{"hello"}) {
+		t.Error(`ft.GetSuggestedWords("h", 10) != []string{"hello"}`)
+	}
 }
