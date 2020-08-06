@@ -10,15 +10,20 @@ test:
 	@# -v means verbose, can see logs of t.Log
 	@go test -v
 
-run:
-	@go run example/usage.go
+run_basic:
+	@go run example/basic/usage.go
+
+run_pali:
+	@cd example/pali; go run encode.go
+	@cd example/pali; go run decode.go
 
 bitsjs:
 	chromium-browser reference/test.html
 
 fmt:
 	@go fmt *.go
-	@go fmt example/*.go
+	@go fmt example/basic/*.go
+	@go fmt example/pali/*.go
 
 help:
 	@go help

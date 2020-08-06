@@ -5,10 +5,10 @@
 .. image:: https://img.shields.io/badge/Language-Go-blue.svg
    :target: https://golang.org/
 
-.. image:: https://godoc.org/github.com/siongui/go-succinct-data-structure-trie?status.png
+.. image:: https://godoc.org/github.com/siongui/go-succinct-data-structure-trie?status.svg
    :target: https://godoc.org/github.com/siongui/go-succinct-data-structure-trie
 
-.. image:: https://api.travis-ci.org/siongui/go-succinct-data-structure-trie.png?branch=master
+.. image:: https://api.travis-ci.org/siongui/go-succinct-data-structure-trie.svg?branch=master
    :target: https://travis-ci.org/siongui/go-succinct-data-structure-trie
 
 .. image:: https://goreportcard.com/badge/github.com/siongui/go-succinct-data-structure-trie
@@ -32,7 +32,8 @@ trie strcuture and we can both have fast lookup and small space requirement.
 Usage
 =====
 
-See `example <example/usage.go>`__.
+- Basic example: `basic usage <example/basic/usage.go>`__
+- Advanced example: `pali dir <example/pali/>`__
 
 UNLICENSE
 =========

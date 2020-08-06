@@ -1,8 +1,8 @@
 package bits
 
 import (
-	"testing"
 	"reflect"
+	"testing"
 )
 
 func TestSearch(t *testing.T) {
