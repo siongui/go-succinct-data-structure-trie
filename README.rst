@@ -8,9 +8,6 @@
 .. image:: https://godoc.org/github.com/siongui/go-succinct-data-structure-trie?status.svg
    :target: https://godoc.org/github.com/siongui/go-succinct-data-structure-trie
 
-.. .. image:: https://api.travis-ci.org/siongui/go-succinct-data-structure-trie.svg?branch=master
-   :target: https://travis-ci.org/siongui/go-succinct-data-structure-trie
-
 .. image:: https://github.com/siongui/go-succinct-data-structure-trie/workflows/Test%20Package/badge.svg
     :target: https://github.com/siongui/go-succinct-data-structure-trie/blob/master/.github/workflows/build.yml
 
@@ -67,7 +64,7 @@ References
 .. [8] `[JavaScript] Bug in Succinct Trie Implementation of Bits.js <https://siongui.github.io/2016/02/02/javascript-bug-in-succinct-trie-implementation-of-bits-js/>`_
 
 .. _Go: https://golang.org/
-.. _UNLICENSE: http://unlicense.org/
+.. _UNLICENSE: https://unlicense.org/
 .. _Succinct Data Structure: https://www.google.com/search?q=Succinct+Data+Structure
 .. _Trie: https://www.google.com/search?q=Trie
 .. _Succinct Trie: https://www.google.com/search?q=Succinct+Trie

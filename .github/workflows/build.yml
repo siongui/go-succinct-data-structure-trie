@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        go: [ '1.15', '1.12' ]
+        go: [ '1.17', '1.8' ]
     name: Test go-succinct-data-structure-trie Package
     steps:
       - uses: actions/checkout@v2.3.1
